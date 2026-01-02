@@ -23,46 +23,89 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
+
     <div id="body">
         <nev>
             <h1>Appointment</h1>
         </nev>
+
         <contener>
-            <form action="">
+            <form id="appointmentForm">
+
                 <label for="name">Father Name</label>
-                <input type="text" id="name" name="name" placeholder=" Enter your full Name" required><br>
+                <input type="text" id="fatherName" name="fatherName" placeholder=" Enter your full Name" required><br>
 
                 <label for="email">Mother Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full Name" required><br>
+                <input type="text" id="motherName" name="motherName" placeholder="Enter your full Name" required><br>
 
                 <label for="phone">Guardians phone number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br>
+                <input type="tel" id="phone" name="guardianPhone" placeholder="Enter your phone number" required><br>
 
                 <label for="email">Guardians Email id</label>
-                <input type="text" id="email" name="email" placeholder="Enter your Email id" required><br>
+                <input type="text" id="email" name="guardianEmail" placeholder="Enter your Email id" required><br>
 
                 <label for="name">Chile Name</label>
-                <input type="text" id="chile_name" name="name" placeholder="Enter your child name" required><br>
+                <input type="text" id="chile_name" name="childName" placeholder="Enter your child name" required><br>
 
                 <label for="age">Child Age</label>
-                <input type="text" id="age" name="age" placeholder="Enter your Child Age" required><br>
+                <input type="text" id="age" name="childAge" placeholder="Enter your Child Age" required><br>
 
                 <label for="class">Admission Chile class</label>
-                <input type="text" id="class" name="class" placeholder="Enter Admission class" required><br>
+                <input type="text" id="class" name="childClass" placeholder="Enter Admission class" required><br>
 
                 <label for="date">Appointment Date</label>
-                <input type="date" id="date" name="date"required><br>
+                <input type="date" id="date" name="appointmentDate" required><br>
 
                 <label for="time">Admission Time</label>
-                <input type="time" id="time" name="time" required><br><br>
+                <input type="time" id="time" name="appointmentTime" required><br><br>
 
                 <label for="message">Additional Message</label><br>
-                <textarea id="message" name="message" rows="4" placeholder="Enter any additional information"></textarea><br><br>
+                <textarea id="message" name="message" rows="4"
+                    placeholder="Enter any additional information"></textarea><br><br>
 
                 <input type="submit" value="Book Appointment" class="Button">
             </form>
         </contener>
     </div>
+
+    <script>
+        document.getElementById("appointmentForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const data = {
+                fatherName: document.getElementById("fatherName").value,
+                motherName: document.getElementById("motherName").value,
+                guardianPhone: document.getElementById("phone").value,
+                guardianEmail: document.getElementById("email").value,
+                childName: document.getElementById("chile_name").value,
+                childAge: document.getElementById("age").value,
+                childClass: document.getElementById("class").value,
+                appointmentDate: document.getElementById("date").value,
+                appointmentTime: document.getElementById("time").value,
+                message: document.getElementById("message").value
+            };
+
+            try {
+                const res = await fetch("http://localhost:5000/api/appointments", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+                console.log(res)
+                const result = await res.json();
+
+                if (result.success) {
+                    alert("✅ Appointment booked successfully!");
+                    document.getElementById("appointmentForm").reset();
+                } else {
+                    alert("❌ " + result.error);
+                }
+            } catch (err) {
+                alert("❌ Server not reachable");
+            }
+        });
+    </script>
+
 </body>
 
 </html>
