@@ -10,7 +10,7 @@ body{
 #body  {
   background-color: white;
   width: 85%;
-  height: 1000px;
+  height: auto;
   margin: auto;
 }
 /* nev-bar */
@@ -83,3 +83,32 @@ nev h1 {
   color: white;
   font-family: 'lobster', cursive;
 }
+#container {
+  width: 100%;
+  height: auto;
+  margin-top: 3%;
+  padding-bottom: 50px;
+  margin-left: 10%;
+}
+#container h1{
+  margin: 3%;
+}
+.paragraph{
+  font-size: 22px;
+}
+#container p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0 10%;
+}
+
+/* footer styles */
+footer {
+  width: 100%;
+  height: 400px;
+  padding: 10px 0;
+  margin-top: 20px;
+  background-color: #103741;
+}
+
+ 
