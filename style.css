@@ -5,10 +5,14 @@
   font-family: Poppins, sans-serif;
 }
 body{
-  scroll-behavior: smooth;
+  background-color: #d8dce0;
 }
-
-
+#body  {
+  background-color: white;
+  width: 85%;
+  height: auto;
+  margin: auto;
+}
 /* nev-bar */
 #nev {
   width: 100%;
@@ -56,13 +60,12 @@ body{
   font-size: 20px;
   font-weight: 500;
   transition: 0.5s;
-  font-family: heebo, sans-serif;
+  font-family: 'lobster', cursive;
 }
 
 #nev ul li a:hover {
   color: #FE5D37;
 }
-
 
 /* nev-bar end */
 
@@ -100,17 +103,26 @@ body{
 .box {
   display: flex;
 }
+#content-box1{
+  background-color: #f7d97f;
+}
+#content-box2{
+  background-color: rgb(186, 169, 173);
+
+}
+#content-box4{
+  background-color: #8abcef;
+}
 
 .facility-card {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .icon-circle {
   width: 85px;
   height: 85px;
   background-color: rgb(242, 229, 229);
-  ;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -129,8 +141,8 @@ body{
   background-color: rgb(242, 229, 229);
   border-radius: 30%/50%;
   padding: 70px;
-  width: 375px;
-  height: 400px;
+  width: 100%;
+  height: 310px;
   margin: -40px auto 0;
   text-align: center;
   transform: all 0.3s ease;
@@ -146,7 +158,6 @@ body{
   font-family: 'Lobster', cursive;
   color: #e56a3f;
   font-size: 28px;
-  margin-bottom: 15px;
 }
 
 
@@ -163,21 +174,18 @@ body{
   color: #ffffff;
 }
 
-
 /* direcror_message */
 
 
 #D-M {
   width: 95%;
   height: 600px;
-  /* background-color: #FE5D37; */
   margin: 50px auto 0px auto;
   border-radius: 20px;
   display: flex;
 }
 
 #div1p {
-  /* background-color: rgb(11, 1, 1); */
   height: 550px;
   width: 650px;
   margin: auto;
@@ -197,19 +205,16 @@ body{
   font-family: 'Heebo', sans-serif;
   line-height: 1.8;
 }
-
 #div2pic {
-  height: 550px;
-  width: 650px;
-  /* background-color: black; */
-  margin: auto;
+  height: 300px;
+  width: 450px;
+  margin: 90px auto;
 }
-
 #directorpic {
   width: 100%;
   height: auto;
   border-radius: 20px;
-  margin: 50px auto;
+  margin: auto;
 }
 
 #T_M {
@@ -474,4 +479,3 @@ footer a:hover {
   color: #FE5D37;
   transform: translateY(-5px);
 }
-
