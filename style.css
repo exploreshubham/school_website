@@ -44,14 +44,17 @@ body{
 
 #nev ul {
   float: right;
-  margin-right: 250px;
+  margin-right: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #nev ul li {
   list-style: none;
   display: inline-block;
   line-height: 80px;
-  margin: 0 20px;
+  margin: 0 20px ;
 }
 
 #nev ul li a {
@@ -65,6 +68,29 @@ body{
 
 #nev ul li a:hover {
   color: #FE5D37;
+}
+
+
+/* 📱 Mobile view */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
 }
 
 /* nev-bar end */
