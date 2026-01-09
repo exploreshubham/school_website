@@ -12,6 +12,8 @@ body{
   width: 85%;
   height: auto;
   margin: auto;
+  box-shadow: 5px 5px 40px 2px rgb(26, 26, 154);
+  transform: translateZ(-50px);
 }
 /* nev-bar */
 #nev {
@@ -137,7 +139,7 @@ body{
 
 }
 #content-box4{
-  background-color: #8abcef;
+  background-color: #66a1dc;
 }
 
 .facility-card {
@@ -168,7 +170,7 @@ body{
   border-radius: 30%/50%;
   padding: 70px;
   width: 100%;
-  height: 310px;
+  height: 350px;
   margin: -40px auto 0;
   text-align: center;
   transform: all 0.3s ease;
@@ -183,7 +185,12 @@ body{
 .content-box h3 {
   font-family: 'Lobster', cursive;
   color: #e56a3f;
-  font-size: 28px;
+  font-size: 25px;
+}
+.content-box h4 {
+  font-family: 'Lobster', cursive;
+  color: #e56a3f;
+  font-size: 22px;
 }
 
 
